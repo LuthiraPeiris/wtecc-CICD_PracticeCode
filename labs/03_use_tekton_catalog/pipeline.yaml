@@ -1,6 +1,6 @@
 apiVersion: tekton.dev/v1beta1
 kind: Pipeline
-metadata:  
+metadata:
   name: cd-pipeline
 spec:
   workspaces:
@@ -18,9 +18,9 @@ spec:
         name: git-clone
       params:
       - name: url
-        value: "$(params.repo-url)"
+        value: $(params.repo-url)
       - name: revision
-        value: "$(params.branch)"
+        value: $(params.branch)
 
     - name: lint
       taskRef:
